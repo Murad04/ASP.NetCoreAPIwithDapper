@@ -11,7 +11,7 @@ namespace ASP.NetCoreAPIwithDapper.Services
         private IConfiguration _configuration;
         private string ConnectionString = "DefaultConnection";
 
-        public Dapper(IConfiguration configuration, string connectionString)
+        public Dapper(IConfiguration configuration)
         {
             _configuration = configuration;
         }

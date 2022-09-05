@@ -53,7 +53,7 @@ namespace ASP.NetCoreAPIwithDapper.Controllers
             dbPara.Add("Id", data.Id);
             dbPara.Add("Name", data.Name, DbType.String);
 
-            var updateArticle = Task.FromResult(_dapper.Update<int>("[dbo].[SP_Update_Article]",
+            var updateArticle = Task.FromResult(_dapper.Update<int>("[dbo].[Update_User]",
                             dbPara,
                             commandType: CommandType.StoredProcedure));
             return updateArticle;

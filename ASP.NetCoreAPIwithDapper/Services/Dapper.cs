@@ -16,6 +16,11 @@ namespace ASP.NetCoreAPIwithDapper.Services
             _configuration = configuration;
         }
 
+        public T Delete<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Dispose()
         {
 

@@ -33,12 +33,13 @@ namespace ASP.NetCoreAPIwithDapper.Controllers
             return result;
         }
 
-        [HttpDelete(nameof(Delete))]
-        public async Task<int> Delete(int Id)
+        [HttpGet(nameof(GetAll))]
+        public async Task<Parameters> GetAll()
         {
-            var result = await Task.FromResult(_dapper.Execute($"Delete [Users] Where Id = {Id}", null, commandType: CommandType.Text));
+            var result = await Task.FromResult(_dapper.Get<Parameters>($"Select * from [Users] ", null, CommandType.Text));
             return result;
         }
+
         [HttpGet(nameof(Count))]
         public Task<int> Count(int num)
         {
